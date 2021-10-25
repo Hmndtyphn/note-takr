@@ -9,7 +9,9 @@ https://github.com/Hmndtyphn/note-takr
 Then navigate to the directory via your command line and run 'npm install' to install required dependencies for the project.
 Then run 'node server.js' or 'npm start' and then navigate to port 3000 on your local host (http://localhost:3000/)
 
-Deployed application link: https://hmndtyphn.github.io/note-takr/
+Github deployment application link: https://hmndtyphn.github.io/note-takr/
+
+Heroku Deployment application link: https://note-takr23.herokuapp.com/
 
 
 <p align="center">
