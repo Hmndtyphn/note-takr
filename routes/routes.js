@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = app => {
 
-    // Setup notes variable
+    // Notes Variable
     fs.readFile("db/db.json","utf8", (err, data) => {
 
         if (err) throw err;

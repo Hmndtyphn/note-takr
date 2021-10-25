@@ -3,7 +3,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require('path');
 
-// Initialize express app
+// Initialize express/ PORT
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -15,7 +15,7 @@ app.use(express.static(__dirname));
 //Require routes file
 require('./routes/routes')(app);
 
-// Setup listener
+// Port listener
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
 }); 
