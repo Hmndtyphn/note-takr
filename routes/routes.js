@@ -17,10 +17,10 @@ module.exports = app => {
 
         // Post route
         app.post("/api/notes", function(req, res) {
-            let newNote = req.body;
-            notes.push(newNote);
+            let createNote = req.body;
+            notes.push(createNote);
             updateDb();
-            return console.log("Added new note: "+newNote.title);
+            return console.log("Added new note: "+createNote.title);
         });
 
         // Get by ID
