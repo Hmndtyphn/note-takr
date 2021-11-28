@@ -1,17 +1,35 @@
-Note Takr
-
-Summary: A simple note taking app that allows you to save and delete notes. This app is powered by Express.js, and is a formative tool for everyday use.
-
-Install: Clone the repository to your local directory of choice from below.
-
-https://github.com/Hmndtyphn/note-takr
-
-Then navigate to the directory via your command line and run 'npm install' to install required dependencies for the project.
-Then run 'node server.js' or 'npm start' and then navigate to port 3000 on your local host (http://localhost:3000/)
-
-Github deployment application link: https://hmndtyphn.github.io/note-takr/
-
-Heroku Deployment application link: https://note-takr23.herokuapp.com/
+[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
+  # Note Takr
+## Table of Contents 
+* [Description](#Description)  <br>
+* [Installation](#Installation)<br>
+* [Usage](#Usage)<br>
+* [Contributing](#Contributing)<br>
+* [Tests](#Tests)<br>
+* [License](#License)<br>
+* [Questions / Issues](#Questions)<br>
+  ## Description
+   A simple note taking app that allows you to save, edit and delete notes. This app is powered by Express.js, and is a great tool for everyday use.
+  ## Installation
+  Clone the repository to your local directory of choice from below. Then run npm i to install all dependencies.
+  ## Usage
+  run 'node server.js' or 'npm start' and then navigate to port 3000 on your local host (http://localhost:3000/)<br>
+  undefined
+  ## Contributing
+  n/a <br>
+  
+  
+  ## Tests
+  n/a
+  
+  ## License
+  [![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
+  <br>
+  https://www-40.ibm.com/software/sla/sladb.nsf 
+  ## Questions / Report an Issue
+  #### Contact Me @: jared.elliott09@gmail.com<br>
+  #### GitHub Profile: Hmndtyphn
+  #### GitHub Repo Link: https://github.com/Hmndtyphn/note-takr
 
 
 <p align="center">
@@ -20,4 +38,3 @@ Heroku Deployment application link: https://note-takr23.herokuapp.com/
 <p align="center">
   <img src="images/Screen Shot 2021-10-24 at 11.16.48 PM.png" width="350" title="hover text" alt="">
 </p> <br>
-
