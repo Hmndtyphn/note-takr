@@ -19,5 +19,5 @@ Heroku Deployment application link: https://note-takr23.herokuapp.com/
 </p> <br>
 <p align="center">
   <img src="images/Screen Shot 2021-10-24 at 11.16.48 PM.png" width="350" title="hover text" alt="">
-</p>
+</p> <br>
 
