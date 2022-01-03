@@ -5,7 +5,7 @@ let saveNoteBtn;
 let createNoteBtn;
 let noteList;
 
-
+// if statement to use each function
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteBody = document.querySelector('.note-textarea');
