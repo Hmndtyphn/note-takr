@@ -1,21 +1,23 @@
+// dependencies for path, file
 const path = require('path');
 const fs = require('fs');
 
 
 module.exports = app => {
 
+    // variable for notes setup
     fs.readFile("db/db.json","utf8", (err, data) => {
 
         if (err) throw err;
 
         var notes = JSON.parse(data);
     
-        // Get route
+        // Get route for api/notes
         app.get("/api/notes", function(req, res) {
             res.json(notes);
         });
 
-        // Post route
+        // Post route for api/notes
         app.post("/api/notes", function(req, res) {
             let createNote = req.body;
             notes.push(createNote);
@@ -35,17 +37,17 @@ module.exports = app => {
             console.log("Deleted note with id "+req.params.id);
         });
 
-        // Notes Page
+        // Notes Page (pulls from notes.html)
         app.get('/notes', function(req,res) {
             res.sendFile(path.join(__dirname, "../public/notes.html"));
         });
         
-        // index page
+        // index page (pulls from index.html)
         app.get('*', function(req,res) {
             res.sendFile(path.join(__dirname, "../public/index.html"));
         });
 
-        //Update function
+        //Update function (this updates the json file when adding or deleting a note)
         function updateDb() {
             fs.writeFile("db/db.json",JSON.stringify(notes,'\t'),err => {
                 if (err) throw err;

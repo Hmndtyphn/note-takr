@@ -1,8 +1,10 @@
+// defining each for query selector
 let noteTitle;
 let noteBody;
 let saveNoteBtn;
 let createNoteBtn;
 let noteList;
+
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -25,6 +27,7 @@ const hide = (elem) => {
 // used to keep track of active note
 let activeNote = {};
 
+// Get note method
 const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
@@ -33,6 +36,7 @@ const getNotes = () =>
     },
   });
 
+  // save note method func
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -42,6 +46,7 @@ const saveNote = (note) =>
     body: JSON.stringify(note),
   });
 
+  // delete notes function
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -50,15 +55,18 @@ const deleteNote = (id) =>
     },
   });
 
+  // if there is a note currently in use, show it first
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
+  // if active note is applicable
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteBody.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
     noteBody.value = activeNote.text;
   } else {
+    // else render empty note
     noteTitle.removeAttribute('readonly');
     noteBody.removeAttribute('readonly');
     noteTitle.value = '';
@@ -66,6 +74,7 @@ const renderActiveNote = () => {
   }
 };
 
+// note data pulled from user input, saved to db
 const handleNoteSave = () => {
   const createNote = {
     title: noteTitle.value,
@@ -77,9 +86,10 @@ const handleNoteSave = () => {
   });
 };
 
-// Delete note
+// Delete note when prompted
 const handleNoteDelete = (e) => {
   e.stopPropagation();
+
 
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
@@ -107,9 +117,12 @@ const handleNewNoteView = (e) => {
   renderActiveNote();
 };
 
+// hides save when all fields arent filled by user
 const handleRenderSaveBtn = () => {
   if (!noteTitle.value.trim() || !noteBody.value.trim()) {
+    // this hides
     hide(saveNoteBtn);
+    // this saves when ready
   } else {
     show(saveNoteBtn);
   }
@@ -169,7 +182,7 @@ const renderNoteList = async (notes) => {
   }
 };
 
-// Gets notes from the db and renders them to the sidebar
+// Gets notes from the db and renders them to the left sidebar for further use
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
@@ -179,4 +192,5 @@ if (window.location.pathname === '/notes') {
   noteBody.addEventListener('keyup', handleRenderSaveBtn);
 }
 
+// gets and renders all note data.
 getAndRenderNotes();
