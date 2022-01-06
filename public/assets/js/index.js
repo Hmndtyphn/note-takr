@@ -12,10 +12,10 @@ let noteAll;
 
 // if statement to use each function, getting note from db
 if (window.location.pathname === '/notes') {
-  noteName = document.querySelector('.note-name');
-  noteInfo = document.querySelector('.note-info');
-  noteSaveBtn = document.querySelector('.note-save');
-  newNoteBtn = document.querySelector('.note-all');
+  noteName = document.querySelector('.note-title');
+  noteInfo = document.querySelector('.note-textarea');
+  noteSaveBtn = document.querySelector('.save-note');
+  newNoteBtn = document.querySelector('.new-note');
   noteAll = document.querySelectorAll('.list-container .list-group');
 }
 
