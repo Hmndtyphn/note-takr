@@ -1,16 +1,21 @@
 // defining each for query selector
+// name of note
 let noteName;
+// note data
 let noteInfo;
+// note save button
 let noteSaveBtn;
+// create new note
 let newNoteBtn;
+// show all notes
 let noteAll;
 
 // if statement to use each function, getting note from db
 if (window.location.pathname === '/notes') {
-  noteName = document.querySelector('.note-title');
-  noteInfo = document.querySelector('.note-textarea');
-  noteSaveBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
+  noteName = document.querySelector('.note-name');
+  noteInfo = document.querySelector('.note-info');
+  noteSaveBtn = document.querySelector('.note-save');
+  newNoteBtn = document.querySelector('.note-all');
   noteAll = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -202,7 +207,7 @@ const getAndRenderNotes = () => noteGet().then(renderNoteAll);
 
 // if statement for being on note page
 if (window.location.pathname === '/notes') {
-  
+
   // if note save is clicked
   noteSaveBtn.addEventListener('click', handleNoteSave);
 
