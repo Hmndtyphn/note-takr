@@ -48,7 +48,7 @@ const noteSave = (note) =>
     headers: {
       'Content-Type': 'application/json',
     },
-    
+
     // saves note as string to left hand side bar
     body: JSON.stringify(note),
   });
@@ -96,24 +96,6 @@ const handleNoteSave = () => {
   });
 };
 
-// Delete note when prompted
-const handleNoteDelete = (e) => {
-  e.stopPropagation();
-
-
-  const note = e.target;
-  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
-
-  if (activeNote.id === noteId) {
-    activeNote = {};
-  }
-
-  deleteNote(noteId).then(() => {
-    getAndRenderNotes();
-    renderActiveNote();
-  });
-};
-
 // Sets the current note
 const handleNoteView = (e) => {
   e.preventDefault();
@@ -138,6 +120,24 @@ const handleRenderSaveBtn = () => {
   } else {
     show(noteSaveBtn);
   }
+};
+
+// Delete note when prompted
+const handleNoteDelete = (e) => {
+  e.stopPropagation();
+
+
+  const note = e.target;
+  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
+
+  if (activeNote.id === noteId) {
+    activeNote = {};
+  }
+
+  deleteNote(noteId).then(() => {
+    getAndRenderNotes();
+    renderActiveNote();
+  });
 };
 
 // populate note titles list
@@ -188,17 +188,23 @@ const renderNoteAll = async (notes) => {
     return liEl;
   };
 
+  // if no notes are saved
   if (jsonNotes.length === 0) {
     noteAllItems.push(createLi('No saved Notes', false));
   }
 
+  // create a list of each note in order of when created
   jsonNotes.forEach((note) => {
+
+    // creates note list
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
 
+    // pushed saved note to list
     noteAllItems.push(li);
   });
 
+  // appends all saved notes to page, in list order
   if (window.location.pathname === '/notes') {
     noteAllItems.forEach((note) => noteAll[0].append(note));
   }
