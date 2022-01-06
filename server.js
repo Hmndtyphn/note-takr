@@ -7,14 +7,14 @@ const fs = require("fs");
 // require express
 const express = require("express");
 
+// app PORT initialization
+const app = express();
+const PORT = process.env.PORT || 3000;
+
 // express app middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname));
-
-// app PORT initialization
-const app = express();
-const PORT = process.env.PORT || 3000;
 
 
 // pulls from the routes files
