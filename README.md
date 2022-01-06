@@ -14,18 +14,20 @@
   Clone the repository to your local directory of choice from below. Then run npm i to install all dependencies.
   ## Usage
   run 'node server.js' or 'npm start' and then navigate to port 3000 on your local host (http://localhost:3000/)<br>
-  undefined
   ## Contributing
-  n/a <br>
+  n/a
+   <br>
   
   
   ## Tests
   n/a
+  <br>
   
   ## License
   [![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
-  <br>
+  
   https://www-40.ibm.com/software/sla/sladb.nsf 
+  <br>
   ## Questions / Report an Issue
   #### Contact Me @: jared.elliott09@gmail.com<br>
   #### GitHub Profile: Hmndtyphn
@@ -33,6 +35,6 @@
 
 
 <p align="center">
-  <img src="images/Screen Shot 2021-10-24 at 11.16.33 PM.png" width="350" title="hover text" alt="">
+  <img src="images/Screen Shot 2021-10-24 at 11.16.33 PM.png" width="1000" title="hover text" alt="screenshot of application">
 </p> <br>
 
