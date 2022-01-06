@@ -38,3 +38,6 @@
   <img src="images/Screen Shot 2021-10-24 at 11.16.33 PM.png" width="1000" title="hover text" alt="screenshot of application">
 </p> <br>
 
+<p align="center">
+  <img src="images/Screen Shot 2021-10-24 at 11.16.48 PM.png" width="1000" title="hover text" alt="screenshot of application">
+</p> <br>
