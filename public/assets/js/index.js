@@ -2,7 +2,7 @@
 let noteTitle;
 let noteBody;
 let saveNoteBtn;
-let createNoteBtn;
+let newNoteBtn;
 let noteList;
 
 // if statement to use each function
@@ -10,7 +10,7 @@ if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteBody = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
-  createNoteBtn = document.querySelector('.new-note');
+  newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -76,11 +76,11 @@ const renderActiveNote = () => {
 
 // note data pulled from user input, saved to db
 const handleNoteSave = () => {
-  const createNote = {
+  const newNote = {
     title: noteTitle.value,
     text: noteBody.value,
   };
-  saveNote(createNote).then(() => {
+  saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -187,7 +187,7 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
-  createNoteBtn.addEventListener('click', handleNewNoteView);
+  newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteBody.addEventListener('keyup', handleRenderSaveBtn);
 }

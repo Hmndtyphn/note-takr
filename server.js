@@ -1,9 +1,11 @@
 // require all dependencies 
 const path = require('path');
 const fs = require("fs");
+
+// require express
 const express = require("express");
 
-// express app initialization
+// app PORT initialization
 const app = express();
 const PORT = process.env.PORT || 3000;
 
